@@ -1,5 +1,5 @@
 function pgload() {
-    var divprop1 = '<div id="pgname" style="height: 56px;"><a class="subheader normcur hlink" style="display: block; color: var(--font-color);" HREF=""><b style="font-size: 16px;">';
+    var divprop1 = '<div id="pgname" style="height: 48px;"><a class="subheader normcur hlink" style="display: block; color: var(--font-color); font-family: system-ui;" HREF=""><b style="font-size: 16px;">';
     var divprop2 = '</b></a><br><br></div>'
     if (name != '') {
         document.getElementById("title").outerHTML = '<title id="title">Wizardry: ' + name + '</title>';

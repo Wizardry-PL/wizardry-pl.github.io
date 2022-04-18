@@ -20,14 +20,14 @@
     <div id="pgname"></div>
     <div id="noload" style="color: white; font-size: 24px; text-align: center"><b><u>Page didn't load? Please enable JavaScript. JavaScipt is used to load page content.</u></b></div>
     <body bgcolor=#000000>
-        <div class="body">
-            <select id="choose" style="width: calc(100% - 160px); float: left;">
+        <div class="body" style="display: flex;">
+            <select id="choose" style="flex-grow: 1; float: left;">
                 <option value="Wizardry%20Language%20Specification%20Manual.pdf">Standard documentation</option>
                 <option value="Wizardry%20Language%20Specification%20Manual%20POSIX.pdf">POSIX documentation</option>
                 <option value="Wizardry%20Language%20Specification%20Manual%20Win32.pdf">Win32 documentation</option>
             </select>
             <span style="margin: 0px 2px"></span>
-            <button style="width: 156px; float: right;" onclick='viewdoc();'>View or download</button>
+            <button style="float: right;" onclick='viewdoc();'>View or download</button>
         </div>
     </body>
     <body bgcolor=#000000 style="display: flex; flex-flow: column; height: 100%;">
