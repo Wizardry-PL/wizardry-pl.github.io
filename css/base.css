@@ -2,7 +2,7 @@
     --font-color: #f0f0f0;
     --bg-color: #1a1a1f;
     --accent-color: #0f59a2;
-    --elem-color: #323232;
+    --elem-color: #35353A;
     --header-color: #22222a;
     --header-color-hover: #25252d;
 }
@@ -31,8 +31,8 @@ h6 {
     padding: 0px;
 }
 h1, h2, h3, h4, h5, h6 {
-    margin-top: 32px;
-    margin-bottom: 12px;
+    margin-top: 24px;
+    margin-bottom: 20px;
 }
 button {
     background-color: var(--elem-color);
@@ -43,7 +43,6 @@ button {
     border-radius: 4px;
     margin: 2px 0px;
     padding: 6px 12px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
 }
 input {
     background-color: var(--elem-color);
@@ -55,7 +54,6 @@ input {
     border-radius: 4px;
     padding: 4px 8px 6px 8px;
     height: 20px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
     transform: translateY(1px);
 }
 select {
@@ -67,20 +65,16 @@ select {
     display: inline-block;
     border-radius: 4px;
     padding: 5px 4px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
 }
 button:hover {
     border: solid 1px var(--accent-color);
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
 }
 select:hover, input:focus, button:focus, select:focus {
     border: solid 1px var(--accent-color);
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
 }
 button:active, select:active {
     border: solid 1px var(--accent-color);
     background-color: var(--accent-color);
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
 }
 button:focus, input:focus, select:focus {
     outline: none;
@@ -112,38 +106,38 @@ body {
 code {
     display: inline-block;
     font-family: Hack, Courier New, monospace;
-    padding: 4px;
-    padding-left: 8px;
-    padding-right: 8px;
-    margin: 2px 0px;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
     word-break: break-word;
 }
 code_rem {
-    color: #9797a0;
+    color: #757a88;
 }
 code_cmd {
-    color: #06ecec;
+    color: #3672f3;
 }
-code_keyword {
-    color: #fff708;
+code_kw {
+    color: #d1c45d;
 }
 code_ns {
-    color: #fa49c0;
+    color: #f7746b;
 }
 code_type {
-    color: #24ef75;
+    color: #44c7ad;
 }
 code_var {
-    color: #f49b35;
+    color: #c8873d;
 }
 code_func {
-    color: #076aff;
+    color: #4ea1ce;
 }
 code_num {
-    color: #ff533f;
+    color: #4fce3c;
 }
 code_str {
-    color: #c62ee8;
+    color: #4fce3c;
 }
 note {
     color: #ffe28b;
@@ -155,23 +149,19 @@ warn {
     font-style: oblique;
 }
 .code {
-    display: block;
+    display: inline-block;
+    width: calc(100% - 20px);
+    margin: 10px 0px;
     font-family: Hack, Courier New, monospace;
-    line-height: 1.5;
-    padding: 8px;
-    padding-left: 12px;
-    padding-right: 12px;
-    margin: 2px 0px;
+    line-height: 1.375;
+    padding: 8px 10px;
 }
 code, .code {
     cursor: auto;
     background: var(--elem-color);
     font-size: 16px;
+    color: #CECECE;
     border-radius: 5px 5px 5px 5px;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.35);
-}
-code:hover, .code:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 .text {
     color: var(--font-color);
@@ -272,4 +262,13 @@ a:visited {
 }
 a:hover, a:active, a:focus {
     text-decoration: underline;
+}
+ul {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.dent {
+    display: inline-block;
+    padding-left: 40px;
+    margin-bottom: 4px;
 }
