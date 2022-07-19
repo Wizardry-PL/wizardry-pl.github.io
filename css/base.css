@@ -122,22 +122,25 @@ code_kw {
     color: #d1c45d;
 }
 code_ns {
-    color: #f7746b;
+    color: #4ea1ce;
 }
 code_type {
     color: #44c7ad;
 }
 code_var {
-    color: #c8873d;
+    /*color: #808080;*/
 }
 code_func {
-    color: #4ea1ce;
+    /*color: #808080;*/
 }
 code_num {
-    color: #4fce3c;
+    color: #e13f39;
 }
 code_str {
     color: #4fce3c;
+}
+code_fmt {
+    color: #8a9c86;
 }
 note {
     color: #ffe28b;
@@ -147,6 +150,13 @@ warn {
     color: #ff3b3a;
     font-weight: bold;
     font-style: oblique;
+}
+error {
+    font-family: monospace;
+    color: #cc0000;
+}
+disabled {
+    color: #999999;
 }
 .code {
     display: inline-block;
@@ -160,7 +170,7 @@ code, .code {
     cursor: auto;
     background: var(--elem-color);
     font-size: 16px;
-    color: #CECECE;
+    color: #D4D4D4;
     border-radius: 5px 5px 5px 5px;
 }
 .text {
@@ -271,4 +281,9 @@ ul {
     display: inline-block;
     padding-left: 40px;
     margin-bottom: 4px;
+}
+.linkspan {
+    display: table-cell;
+    display: inline-block;
+    white-space: nowrap;
 }

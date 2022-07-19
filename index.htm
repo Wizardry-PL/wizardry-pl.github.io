@@ -57,9 +57,17 @@
             <div class="body h1">
                 <h1>Links</h1>
                 <span style="display: table;">
-                    <span style="display: table-cell; display: inline-block; white-space: nowrap;"><b>Documentation:</b>&nbsp;&nbsp;<tb></span>
-                    <span style="display: table-cell; display: inline-block; white-space: nowrap;">
+                    <span class="linkspan"><b>Documentation:</b>&nbsp;&nbsp;<tb></span>
+                    <span style="linkspan">
                         <a HREF="/pages/docs/">Page</a><tb><a HREF="https://github.com/Wizardry-PL/Wizardry">Repository</a><br>
+                    </span>
+                    <span class="linkspan"><b>Compiler:</b>&nbsp;&nbsp;<tb></span>
+                    <span style="linkspan">
+                        <disabled>Download</disabled><tb><a HREF="https://github.com/Wizardry-PL/Wizard">Repository</a><br>
+                    </span>
+                    <span class="linkspan"><b>Github page:</b>&nbsp;&nbsp;<tb></span>
+                    <span style="linkspan">
+                        <a HREF="https://github.com/Wizardry-PL">Wizardry-PL</a><br>
                     </span>
                 </span>
             </div>
@@ -86,8 +94,19 @@
                     <tb><code_type>char$$</code_type> <code_var>outstr</code_var> = <code_ns>wiz</code_ns>.<code_func>alloc</code_func>(<code_num>4096</code_num>);<br>
                     <tb><code_kw>defer</code_kw> <code_ns>wiz</code_ns>.<code_func>free</code_func>(<code_var>outstr</code_var>);<br>
                     <tb><code_func>mkreadable</code_func>(<code_var>mystr</code_var>, <code_var>outstr</code_var>, <code_num>4096</code_num>);<br>
-                    <tb><code_ns>wiz</code_ns>.<code_func>printf</code_func>(<code_str>"Data: %[s]\n"</code_str>, <code_var>outstr</code_var>);<br>
+                    <tb><code_ns>wiz</code_ns>.<code_func>printf</code_func>(<code_str>"Data: <code_fmt>%[s]</code_fmt>\n"</code_str>, <code_var>outstr</code_var>);<br>
                     <tb><code_rem># frees mystr and outstr before returning due to the two defers</code_rem><br>
+                    }<br>
+                </div><br>
+                A program that displays info about the arguments passed to it:<br>
+                <div class="code">
+                    <code_cmd>@include &#60;wizardry&#62;</code_cmd><br>
+                    <br>
+                    <code_type>int</code_type> <code_func>main</code_func>(<code_type>int</code_type> <code_var>argc</code_var>, <code_type>char$$</code_type> <code_var>argv</code_var>) {<br>
+                    <tb><code_kw>for</code_kw> (<code_type>int</code_type> <code_var>i</code_var> = <code_num>0</code_num>; <code_var>i</code_var> < <code_var>argc</code_var>; ++<code_var>i</code_var>) {<br>
+                    <tb><tb><code_ns>wiz</code_ns>.<code_func>printf</code_func>(<code_str>"Arg <code_fmt>%[i]</code_fmt> (<code_fmt>%[i]</code_fmt> chars): <code_fmt>%[s]</code_fmt>\n"</code_str>, <code_var>i</code_var>, <code_ns>wiz</code_ns>.<code_func>strlen</code_func>(<code_var>argv</code_var>[<code_var>i</code_var>]), <code_var>argv</code_var>[<code_var>i</code_var>]);<br>
+                    <tb>}<br>
+                    <tb><code_kw>return</code_kw> <code_num>0</code_num>;<br>
                     }<br>
                 </div><br>
             </div>
