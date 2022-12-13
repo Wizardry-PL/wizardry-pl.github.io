@@ -1,3 +1,5 @@
----
-layout: default
----
+title: Wizardry
+description: Wizardry Programming Language Website
+domain: wizardry-pl.github.io
+url: https://wizardry-pl.github.io
+baseurl: /

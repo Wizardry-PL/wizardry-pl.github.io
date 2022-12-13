@@ -252,17 +252,29 @@ a {
     color: #72c4ff;
     outline: none;
 }
-a.hlink:link {
+.hlink:link {
     text-decoration: none;
 }
-a.hlink:visited {
+.hlink:visited {
     text-decoration: none;
 }
-a.hlink:hover {
+.hlink:hover {
     text-decoration: none;
 }
-a.hlink:active {
+.hlink:active {
     text-decoration: none;
+}
+.slink:link {
+    text-decoration: none;
+}
+.slink:visited {
+    text-decoration: none;
+}
+.slink:hover {
+    text-decoration: underline;
+}
+.slink:active {
+    text-decoration: underline;
 }
 a:link {
     text-decoration: none;

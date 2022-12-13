@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" style="padding: 0px;">
     <head>
-        <script>var name="Documentation"</script>
-        <title id="title"></title>
+        <title id="title">Wizardry</title>
         <link rel="icon" href="/resources/Wizardry_icon.png"></link>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,13 +13,76 @@
         <style>object {border: none; border-radius: 5px; flex: 1 1 auto;}</style>
         <style>iframe {border: none; border-radius: 5px; flex: 1 1 auto;}</style>
     </head>
-    <script language="JavaScript" type="text/javascript" src="/js/jquery.js"></script>
+    <div class="header" style="height: 120px;">
+        <img src="/resources/Wizardry_banner.png" style="width: 320px; height: 90px; transform: translateY(-2px);"></img><br>
+        <a HREF="/" class="hlink" style="font-size: 0px;">
+            <span style="transform: translateY(-34px); display: inline-block; padding-bottom: 0px; font-size: 8px;">
+                <img src="/resources/home.png" style="width: 20px; height: 20px; transform: translateY(4px);"></img>
+                <span style="width: 100px;">&nbsp;</span>
+                <button id = "btn1" onclick='redirbtn("btn1")' class="hlink linkcur" style="font-size: 14px; padding-bottom: 4px; padding-top: 3px">wizardry-pl.github.io</button>
+            </span>t
+        </a>
+    </div>
     <span id="header"></span>
-    <script>$(document).ready(function(){$('#header').load('/html/header.htm');});</script>
     <div id="pgname"></div>
-    <div id="noload" style="color: white; font-size: 24px; text-align: center"><b><u>Page didn't load? Please enable JavaScript. JavaScipt is used to load page content.</u></b></div>
-    {{ content }}
-    <span id="footer">
-    <script>$(document).ready(function(){$('#footer').load('/html/footer.htm');});</script>
-    <script language="JavaScript" type="text/javascript" src="/js/pageload.js"></script>
+    <body bgcolor=#000000>
+        {{ content }}
+    </body>
+    <p style="font-size: 14px; margin-bottom: 0px; margin-top: 28px;"><br></p>
+    <div class="footer" style="display: table; padding-top: 5px">
+        <span style="display: table-cell; padding: 0px 4px; height: 1px"></span>
+        <div style="white-space: nowrap; float: left; display: table-cell; transform: translateY(1px)">
+            <div style="white-space: nowrap; display: inline-block">
+                <div style="display: inline-block; white-space: nowrap">
+                    <a HREF="https://www.github.com/PQCraft" target="_blank" class="hlink text">
+                        Site designed by PQCraft
+                    </a>
+                </div>
+            </div>
+            <span style="padding: 0px 16px"></span>
+        </div>
+        <div style="width: 100%; text-align: right; white-space: normal; display: table-cell; transform: translateY(-2px)">
+            <div style="white-space: nowrap; display: inline-block">
+                <div style="display: inline-block; white-space: nowrap">
+                    <a HREF="https://github.com/Wizardry-PL/wizardry-pl.github.io" target="_blank" class="hlink">
+                        <img src="/resources/gh.png" style="width: 12px; height: 12px; padding: 0px 2px; transform: translateY(2px); display: inline-block"></img>
+                        <span class="text slink">Website Source</span>
+                    </a>
+                </div>
+                <div style="display: inline-block; white-space: nowrap">
+                    <span style="padding: 0px 4px"></span>
+                    <a HREF="https://github.com/Wizardry-PL" target="_blank" class="hlink">
+                        <img src="/resources/gh.png" style="width: 12px; height: 12px; padding: 0px 2px; transform: translateY(2px); display: inline-block"></img>
+                        <span class="text slink">Wizardy-PL GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <span style="display: table-cell; padding: 0px 4px; height: 1px"></span>
+    </div>
+    <script>
+        function pgload() {
+            var divprop1 = '<div id="pgname" style="height: 48px;"><a class="subheader normcur hlink" style="display: block; color: var(--font-color);" HREF=""><b style="font-size: 16px;">';
+            var divprop2 = '</b></a><br><br></div>'
+            if ("{{ page.title }}" != '') {
+                document.getElementById("title").outerHTML = '<title id="title">Wizardry: ' + "{{ page.title }}" + '</title>';
+                document.getElementById("pgname").outerHTML = divprop1 + '&nbsp;&nbsp;&nbsp;' + "{{ page.title }}" + divprop2;
+            } else {
+                document.getElementById("title").outerHTML = '<title id="title">Wizardry</title>';
+                document.getElementById("pgname").outerHTML = divprop1 + '<br>' + divprop2;
+            }
+            customTag("tb", instb);
+        }
+        function customTag(tagName, fn){
+            document.createElement(tagName);
+            var tagInstances = document.getElementsByTagName(tagName);
+            for (var i = 0; i < tagInstances.length; i++) {
+                fn(tagInstances[i]);
+            }
+        }
+        function instb(elem) {
+            document.getElementsByTagName('html')[0].innerHTML = document.getElementsByTagName('html')[0].innerHTML.replace(/<tb>/g, "&nbsp;&nbsp;&nbsp;&nbsp;");
+        }
+        pgload();
+    </script>
 </html>

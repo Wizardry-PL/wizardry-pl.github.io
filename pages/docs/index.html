@@ -1,0 +1,36 @@
+---
+title: Documentation
+layout: default
+---
+<body bgcolor=#000000>
+    <div class="body" style="display: flex;">
+        <select id="choose" style="flex-grow: 1; float: left;">
+            <option value="Wizardry%20Language%20Specification%20Manual.pdf">Standard documentation</option>
+            <option value="Wizardry%20Language%20Specification%20Manual%20POSIX.pdf">POSIX documentation</option>
+            <option value="Wizardry%20Language%20Specification%20Manual%20Win32.pdf">Win32 documentation</option>
+        </select>
+        <span style="margin: 0px 2px"></span>
+        <button style="float: right;" onclick='viewdoc();'>View or download</button>
+    </div>
+</body>
+<body bgcolor=#000000 style="display: flex; flex-flow: column; height: 100%;">
+    <div class="body" style="display: flex; flex-flow: column; height: 100%;">
+        <div style="margin: 0px; height: 8px;"></div>
+        <div id="update"></div>
+        <script language="JavaScript" type="text/javascript">
+            function setdoc() {
+                document.getElementById('update').outerHTML = '<object id="update" data="/Wizardry/' +
+                                                              document.getElementById('choose').value +
+                                                              '#toolbar=0"><object style="width: 100%; height: 100%;" data="https://docs.google.com/viewer?url=https://wizardry-pl.github.io/Wizardry/' +
+                                                              document.getElementById('choose').value + '&embedded=true">' +
+                                                              '<error>Could not load document</error>' +
+                                                              '</iframe></object></object>';
+            }
+            function viewdoc() {
+                window.location.href = '/Wizardry/' + document.getElementById('choose').value;
+            }
+            document.getElementById('choose').addEventListener('change', setdoc);
+            setdoc();
+        </script>
+    </div>
+</body>
