@@ -2,8 +2,8 @@
 title: Documentation
 layout: default
 ---
-<body bgcolor=#000000>
-    <div class="body" style="display: flex;">
+<div class="dynamic">
+    <div style="display: flex;">
         <select id="choose" style="flex-grow: 1; float: left;">
             <option value="Wizardry%20Language%20Specification%20Manual.pdf">Standard documentation</option>
             <option value="Wizardry%20Language%20Specification%20Manual%20POSIX.pdf">POSIX documentation</option>
@@ -12,9 +12,7 @@ layout: default
         <span style="margin: 0px 2px"></span>
         <button style="float: right;" onclick='viewdoc();'>View or download</button>
     </div>
-</body>
-<body bgcolor=#000000 style="display: flex; flex-flow: column; height: 100%;">
-    <div class="body" style="display: flex; flex-flow: column; height: 100%;">
+    <div style="display: flex; flex-grow: 1; height: 100%;">
         <div style="margin: 0px; height: 8px;"></div>
         <div id="update"></div>
         <script language="JavaScript" type="text/javascript">
@@ -33,4 +31,4 @@ layout: default
             setdoc();
         </script>
     </div>
-</body>
+</div>

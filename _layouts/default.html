@@ -13,63 +13,49 @@
         <style>object {border: none; border-radius: 5px; flex: 1 1 auto;}</style>
         <style>iframe {border: none; border-radius: 5px; flex: 1 1 auto;}</style>
     </head>
-    <div class="header" style="height: 120px;">
-        <img src="/resources/Wizardry_banner.png" style="width: 320px; height: 90px; transform: translateY(-2px);"></img><br>
-        <a HREF="/" class="hlink" style="font-size: 0px;">
-            <span style="transform: translateY(-34px); display: inline-block; padding-bottom: 0px; font-size: 8px;">
-                <img src="/resources/home.png" style="width: 20px; height: 20px; transform: translateY(4px);"></img>
-                <span style="width: 100px;">&nbsp;</span>
-                <button id = "btn1" onclick='redirbtn("btn1")' class="hlink linkcur" style="font-size: 14px; padding-bottom: 4px; padding-top: 3px">wizardry-pl.github.io</button>
-            </span>t
-        </a>
-    </div>
-    <span id="header"></span>
-    <div id="pgname"></div>
     <body bgcolor=#000000>
-        {{ content }}
-    </body>
-    <p style="font-size: 14px; margin-bottom: 0px; margin-top: 28px;"><br></p>
-    <div class="footer" style="display: table; padding-top: 5px">
-        <span style="display: table-cell; padding: 0px 4px; height: 1px"></span>
-        <div style="white-space: nowrap; float: left; display: table-cell; transform: translateY(1px)">
-            <div style="white-space: nowrap; display: inline-block">
-                <div style="display: inline-block; white-space: nowrap">
-                    <a HREF="https://www.github.com/PQCraft" target="_blank" class="hlink text">
-                        Designed by PQCraft
-                    </a>
-                </div>
+        <div style="display: flex; min-height: 100vh; flex-direction: column;">
+            <div id="header"></div>
+            <div class="content">
+                {{ content }}
             </div>
-            <span style="padding: 0px 16px"></span>
-        </div>
-        <div style="width: 100%; text-align: right; white-space: normal; display: table-cell; transform: translateY(-2px)">
-            <div style="white-space: nowrap; display: inline-block">
-                <div style="display: inline-block; white-space: nowrap">
-                    <a HREF="https://github.com/Wizardry-PL/wizardry-pl.github.io" target="_blank" class="hlink">
-                        <img src="/resources/gh.png" style="width: 12px; height: 12px; padding: 0px 2px; transform: translateY(2px); display: inline-block"></img>
-                        <span class="text slink">Site Source</span>
-                    </a>
-                </div>
-                <div style="display: inline-block; white-space: nowrap">
+            <p style="font-size: 14px; margin-bottom: 0px; margin-top: 28px;"><br></p>
+            <div class="footer" style="padding-top: 5px">
+                <div style="white-space: nowrap; float: left; display: table-cell; transform: translateY(-1px)">
                     <span style="padding: 0px 4px"></span>
-                    <a HREF="https://github.com/Wizardry-PL" target="_blank" class="hlink">
-                        <img src="/resources/gh.png" style="width: 12px; height: 12px; padding: 0px 2px; transform: translateY(2px); display: inline-block"></img>
-                        <span class="text slink">Project GitHub</span>
-                    </a>
+                    <div style="white-space: nowrap; display: inline-block">
+                        <div style="display: inline-block; white-space: nowrap">
+                            <a HREF="https://www.github.com/PQCraft" target="_blank" class="hlink text">
+                                Site designed by PQCraft
+                            </a>
+                        </div>
+                    </div>
+                    <span style="padding: 0px 12px"></span>
                 </div>
+                <div style="width: 100%; text-align: right; white-space: normal; display: table-cell; transform: translateY(-1px)">
+                    <div style="white-space: nowrap; display: inline-block">
+                        <div style="display: inline-block; white-space: nowrap">
+                            <a HREF="https://github.com/Wizardry-PL" target="_blank" class="hlink">
+                                <img src="/resources/gh.png" style="width: 12px; height: 12px; padding: 0px 2px; transform: translateY(2px); display: inline-block"></img>
+                                <span class="text slink">Github</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <span style="display: table-cell; padding: 0px 4px; height: 1px"></span>
             </div>
         </div>
-        <span style="display: table-cell; padding: 0px 4px; height: 1px"></span>
-    </div>
+    </body>
     <script>
         function pgload() {
-            var divprop1 = '<div id="pgname" style="height: 48px;"><a class="subheader normcur hlink" style="display: block; color: var(--font-color);" HREF=""><b style="font-size: 16px;">';
+            var divprop1 = '<div id="header" style="height: 48px;"><a class="header normcur hlink" style="display: block; color: var(--font-color);" HREF=""><b style="font-size: 16px;">';
             var divprop2 = '</b></a><br><br></div>'
             if ("{{ page.title }}" != '') {
                 document.getElementById("title").outerHTML = '<title id="title">Wizardry: ' + "{{ page.title }}" + '</title>';
-                document.getElementById("pgname").outerHTML = divprop1 + '&nbsp;&nbsp;&nbsp;' + "{{ page.title }}" + divprop2;
+                document.getElementById("header").outerHTML = divprop1 + '&nbsp;&nbsp;&nbsp;' + "{{ page.title }}" + divprop2;
             } else {
                 document.getElementById("title").outerHTML = '<title id="title">Wizardry</title>';
-                document.getElementById("pgname").outerHTML = divprop1 + '<br>' + divprop2;
+                document.getElementById("header").outerHTML = divprop1 + '<br>' + divprop2;
             }
             customTag("tb", instb);
         }
