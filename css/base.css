@@ -2,32 +2,32 @@
     --font-color: #f0f0f0;
     --bg-color: #1a1a1f;
     --accent-color: #015bd1;
-    --elem-color: #35353A;
+    --elem-color: #35353a;
     --header-color: #22222a;
     --header-color-hover: #25252d;
 }
 h1 {
-    font-size: 32px;
-    padding: 0px;
-}
-h2 {
     font-size: 30px;
     padding: 0px;
 }
-h3 {
+h2 {
     font-size: 28px;
     padding: 0px;
 }
-h4 {
+h3 {
     font-size: 26px;
     padding: 0px;
 }
-h5 {
+h4 {
     font-size: 24px;
     padding: 0px;
 }
-h6 {
+h5 {
     font-size: 22px;
+    padding: 0px;
+}
+h6 {
+    font-size: 20px;
     padding: 0px;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 button {
     background-color: var(--elem-color);
     border: solid 1px #00000000;
-    font-size: 14px;
+    font-size: 12px;
     color: var(--font-color);
     display: inline-block;
     border-radius: 4px;
@@ -48,19 +48,19 @@ input {
     background-color: var(--elem-color);
     margin: 2px 0px 4px 0px;
     border: solid 1px #00000000;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--font-color);
     display: inline-block;
     border-radius: 4px;
     padding: 4px 8px 6px 8px;
     height: 20px;
-    transform: translateY(1px);
+    transform: translatey(1px);
 }
 select {
     background-color: var(--elem-color);
     margin: 2px 0px;
     border: solid 1px #00000000;
-    font-size: 14px;
+    font-size: 12px;
     color: var(--font-color);
     display: inline-block;
     border-radius: 4px;
@@ -90,20 +90,20 @@ html, body {
     margin: 0;
 }
 html {
-    font-size: 18px;
+    font-size: 16px;
     height: 100%;
 }
 body {
     min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: arial, helvetica, sans-serif;
     color: var(--font-color);
-    font-size: 18px;
+    font-size: 16px;
     position: relative;
     width: 100%;
 }
 code {
     display: inline-block;
-    font-family: Hack, Courier New, monospace;
+    font-family: hack, courier new, monospace;
     padding-top: 1px;
     padding-bottom: 2px;
     padding-left: 4px;
@@ -160,15 +160,15 @@ disabled {
     display: inline-block;
     width: calc(100% - 20px);
     margin: 10px 0px;
-    font-family: Hack, Courier New, monospace;
+    font-family: hack, courier new, monospace;
     line-height: 1.375;
     padding: 8px 10px;
 }
 code, .code {
     cursor: auto;
     background: var(--elem-color);
-    font-size: 16px;
-    color: #D4D4D4;
+    font-size: 14px;
+    color: #d4d4d4;
     border-radius: 5px 5px 5px 5px;
 }
 .text {
@@ -187,12 +187,12 @@ code, .code {
 }
 .header {
     /*border-radius: 0px 0px 5px 5px;*/
-    font-size: 32px;
+    display: flex;
+    width: 100%;
+    height: 40px;
     position: relative;
+    top: 0px;
     padding: 0px 0px;
-    padding-bottom: 3px;
-    padding-top: 1px;
-    transform: translateY(-14px);
     z-index: 1;
 }
 .footer {
@@ -275,7 +275,7 @@ ul {
     flex: 1;
 }
 .document {
-    padding: 24px 0px 28px 0px;
+    padding: 36px 0px 28px 0px;
     display: block;
     width: 90%;
     height: 100%;
