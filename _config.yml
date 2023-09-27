@@ -3,3 +3,5 @@ description: Wizardry Programming Language Website
 domain: wizardry-pl.github.io
 url: https://wizardry-pl.github.io
 baseurl: /
+plugins:
+  - jekyll-remote-include

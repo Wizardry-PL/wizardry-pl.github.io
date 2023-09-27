@@ -1,0 +1,41 @@
+{% assign pagetitle = page.title | prepend: 'Documentation - ' %}
+{% include before.html %}
+<div class="document">
+{{ content }}
+<br><div class="divider"></div><br>
+{% assign ls = site.pages | where: "dir", page.dir %}
+{% assign m = 0 %}
+{% for file in ls %}
+{% assign n = file.name | replace: '.md', '' | plus: 0 %}
+{% if n > m %}
+{% assign m = n %}
+{% endif %}
+{% endfor %}
+{% assign chlist = "" | split: ',' %}
+{% assign namelist = "" | split: ',' %}
+{% for i in (1..m) %}
+{% assign name = i | append: '.md' %}
+{% assign file = ls | where: "name", name %}
+{% if file.size == 1 %}
+{% assign chlist = chlist | push: i %}
+{% assign namelist = namelist | push: file[0].title %}
+{% if file[0].name == page.name %}
+{% assign c = chlist.size %}
+{% endif %}
+{% endif %}
+{% endfor %}
+{% assign previ = c | minus: 2 %}
+{% if previ >= 0 and c < chlist.size %}
+<a HREF="{{ chlist[previ] }}">Previous chapter: {{ namelist[previ] }}</a><br>
+<a HREF="{{ chlist[c] }}">Next chapter: {{ namelist[c] }}</a><br>
+{% elsif previ >= 0 %}
+<a HREF="{{ chlist[previ] }}">Previous chapter: {{ namelist[previ] }}</a><br>
+<disabled>Next chapter</disabled><br>
+{% elsif c < chlist.size %}
+<disabled>Previous chapter</disabled><br>
+<a HREF="{{ chlist[c] }}">Next chapter: {{ namelist[c] }}</a><br>
+{% endif %}
+<br>
+<a HREF="{{ page.dir }}">Back to index</a>
+</div>
+{% include after.html %}
