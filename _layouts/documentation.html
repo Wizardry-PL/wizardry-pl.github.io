@@ -24,18 +24,22 @@
 {% endif %}
 {% endif %}
 {% endfor %}
+<center>
 {% assign previ = c | minus: 2 %}
-{% if previ >= 0 and c < chlist.size %}
-<a HREF="{{ chlist[previ] }}">Previous chapter: {{ namelist[previ] }}</a><br>
-<a HREF="{{ chlist[c] }}">Next chapter: {{ namelist[c] }}</a><br>
-{% elsif previ >= 0 %}
-<a HREF="{{ chlist[previ] }}">Previous chapter: {{ namelist[previ] }}</a><br>
-<disabled>Next chapter</disabled><br>
-{% elsif c < chlist.size %}
-<disabled>Previous chapter</disabled><br>
-<a HREF="{{ chlist[c] }}">Next chapter: {{ namelist[c] }}</a><br>
+{% if previ >= 0 %}
+{% assign prev = '<a HREF="' | append: chlist[previ] | append: '">Previous: ' | append: namelist[previ] | append: '</a>' %}
+{% else %}
+{% assign prev = '<disabled>Previous</disabled>' %}
 {% endif %}
+{% if c < chlist.size %}
+{% assign next = '<a HREF="' | append: chlist[c] | append: '">Next: ' | append: namelist[c] | append: '</a>' %}
+{% else %}
+{% assign next = '<disabled>Next</disabled>' %}
+{% endif %}
+{% assign sep = '<span style="border-left: 1px solid var(--font-color); position: relative; top: 2px; margin: 0px 16px; display: inline-block; height: 16px;"></span>' %}
+{{ prev }}{{ sep }}{{ next }}<br>
 <br>
 <a HREF="{{ page.dir }}">Back to index</a>
+</center>
 </div>
 {% include after.html %}
